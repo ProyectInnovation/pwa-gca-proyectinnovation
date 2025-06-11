@@ -109,7 +109,7 @@
     <h1>GPS</h1>
 
     <nav class="nav-bar">
-      <a href="index.html">
+      <a href="index.html" class="active">
         <span class="material-symbols-rounded">home</span>
         Inicio
       </a>
@@ -126,6 +126,7 @@
         Ayuda
       </a>
     </nav>
+
   </header>
 
   <main>
@@ -147,20 +148,7 @@
     });
   </script>
 
-      <script>
-        
-        document.addEventListener("DOMContentLoaded", () => {
-            const enlaces = document.querySelectorAll(".nav-bar a");
-            const urlActual = window.location.pathname.split("/").pop(); 
 
-            enlaces.forEach(enlace => {
-                const href = enlace.getAttribute("href");
-                if (href === urlActual) {
-                    enlace.classList.add("active");
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
