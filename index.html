@@ -148,26 +148,28 @@
   </script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const enlaces = document.querySelectorAll(".nav-bar a");
-        const urlActual = window.location.pathname;
+  document.addEventListener("DOMContentLoaded", () => {
+    const enlaces = document.querySelectorAll(".nav-bar a");
+    const urlActual = window.location.pathname.toLowerCase();
 
-        enlaces.forEach(enlace => {
-            const href = enlace.getAttribute("href");
-            const nombre = href.replace(".html", "").toLowerCase();
+    enlaces.forEach(enlace => {
+      const href = enlace.getAttribute("href").replace(".html", "").toLowerCase();
 
-            const esIndex = nombre === "index";
-            const esPaginaIndex = urlActual === "/" || urlActual.endsWith("index.html");
-            const esPaginaActual = urlActual.endsWith(nombre + ".html");
-
-            if ((esIndex && esPaginaIndex) || (!esIndex && esPaginaActual)) {
-                enlace.classList.add("active");
-            } else {
-                enlace.classList.remove("active");
-            }
-        });
+      // Match si:
+      // - Estás en la raíz (/) y el enlace es index
+      // - Estás en una ruta que incluye el nombre (archivos, camara, ayuda)
+      if (
+        (href === "index" && (urlActual === "/" || urlActual === "/index")) ||
+        (href !== "index" && urlActual.includes(href))
+      ) {
+        enlace.classList.add("active");
+      } else {
+        enlace.classList.remove("active");
+      }
     });
+  });
 </script>
+
 
 </body>
 
