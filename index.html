@@ -29,28 +29,37 @@
  </md-top-app-bar>
    <nav-tab-fixed id="tab"></nav-tab-fixed>
 
-<main>
-  <p>
-    <label>
-      Latitud:
-      <input type="text" id="latitud" readonly>
-    </label>
-  </p>
+   <main>
+     <p>
+  <label>
+   Latitud: &nbsp;&nbsp;
+   <output id="latitud"></output>
+  </label>
+ </p>
 
-  <p>
-    <label>
-      Longitud:
-      <input type="text" id="longitud" readonly>
-    </label>
-  </p>
+ <p>
+  <label>
+   Longitud: &nbsp;&nbsp;
+   <output id="longitud"></output>
+  </label>
+ </p>
 
-  <script>
-    navigator.geolocation.watchPosition(p => {
-      document.getElementById("latitud").value = p.coords.latitude;
-      document.getElementById("longitud").value = p.coords.longitude;
-    });
-  </script>
-</main>
+ <script>
+
+  navigator.geolocation.
+   watchPosition(p => {
+
+    latitud.value =
+     p.coords.latitude
+
+    longitud.value =
+     p.coords.longitude
+
+   });
+
+ </script>
+
+   </main>
 </body>
 
 </html>
