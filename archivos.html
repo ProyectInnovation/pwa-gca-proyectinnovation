@@ -222,18 +222,27 @@
 
     <script>
         
-        document.addEventListener("DOMContentLoaded", () => {
-    const enlaces = document.querySelectorAll(".nav-bar a");
-    const urlActual = window.location.pathname;
+       <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const enlaces = document.querySelectorAll(".nav-bar a");
+        const urlActual = window.location.pathname;
 
-    enlaces.forEach(enlace => {
-        const href = enlace.getAttribute("href");
-        const nombre = href.replace(".html", "").toLowerCase();
-        if (urlActual.includes(nombre)) {
-            enlace.classList.add("active");
-        }
+        enlaces.forEach(enlace => {
+            const href = enlace.getAttribute("href");
+            const nombre = href.replace(".html", "").toLowerCase();
+
+            if (
+                (nombre === "index" && (urlActual === "/" || urlActual.includes("index.html"))) ||
+                (nombre !== "index" && urlActual.includes(nombre))
+            ) {
+                enlace.classList.add("active");
+            } else {
+                enlace.classList.remove("active");
+            }
+        });
     });
-});
+</script>
+
 
     </script>
 
