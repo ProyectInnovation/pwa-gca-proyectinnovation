@@ -167,7 +167,7 @@
                 <span class="material-symbols-rounded">home</span>
                 Inicio
             </a>
-            <a href="archivos.html">
+            <a href="archivos.html" class="active">
                 <span class="material-symbols-rounded">folder</span>
                 Archivos
             </a>
@@ -180,6 +180,7 @@
                 Ayuda
             </a>
         </nav>
+
 
     </header>
 
@@ -219,29 +220,6 @@
         actualizarNombreArchivo('videoMovil', 'videoMovilName');
         actualizarNombreArchivo('archivoGenerico', 'archivoGenericoName');
     </script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const enlaces = document.querySelectorAll(".nav-bar a");
-        const urlActual = window.location.pathname;
-
-        enlaces.forEach(enlace => {
-            const href = enlace.getAttribute("href");
-            const nombre = href.replace(".html", "").toLowerCase();
-
-            const esIndex = nombre === "index";
-            const esPaginaIndex = urlActual === "/" || urlActual.endsWith("index.html");
-            const esPaginaActual = urlActual.endsWith(nombre + ".html");
-
-            if ((esIndex && esPaginaIndex) || (!esIndex && esPaginaActual)) {
-                enlace.classList.add("active");
-            } else {
-                enlace.classList.remove("active");
-            }
-        });
-    });
-</script>
-
 
 </body>
 
