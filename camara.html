@@ -18,9 +18,9 @@
   <link rel="stylesheet" href="css/transicion_pestanas.css" />
   <link rel="expect" blocking="render" href="#navtabfixed" />
 
-      <!-- Material Symbols para iconos -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" />
+  <!-- Material Symbols para iconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" />
 
   <style>
     * {
@@ -187,7 +187,7 @@
     <h1>Camara</h1>
 
     <nav class="nav-bar">
-      <a href="index.html" class="active">
+      <a href="index.html">
         <span class="material-symbols-rounded">home</span>
         Inicio
       </a>
@@ -329,6 +329,21 @@
     function espera(milisegundos) {
       return new Promise(resolve => setTimeout(resolve, milisegundos));
     }
+  </script>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const enlaces = document.querySelectorAll(".nav-bar a");
+      const urlActual = window.location.pathname.split("/").pop();
+
+      enlaces.forEach(enlace => {
+        const href = enlace.getAttribute("href");
+        if (href === urlActual) {
+          enlace.classList.add("active");
+        }
+      });
+    });
   </script>
 </body>
 

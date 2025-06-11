@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" />
 
   <style>
-     * {
+    * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -94,11 +94,11 @@
 
 <body>
 
-    <header>
+  <header>
     <h1>Ayuda</h1>
 
     <nav class="nav-bar">
-      <a href="index.html" class="active">
+      <a href="index.html">
         <span class="material-symbols-rounded">home</span>
         Inicio
       </a>
@@ -192,6 +192,21 @@
   </main>
 
   <nav-drw></nav-drw>
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const enlaces = document.querySelectorAll(".nav-bar a");
+      const urlActual = window.location.pathname.split("/").pop();
+
+      enlaces.forEach(enlace => {
+        const href = enlace.getAttribute("href");
+        if (href === urlActual) {
+          enlace.classList.add("active");
+        }
+      });
+    });
+  </script>
 
 </body>
 
