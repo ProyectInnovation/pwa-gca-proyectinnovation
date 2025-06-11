@@ -147,8 +147,6 @@
     });
   </script>
 
-      <script>
-        
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const enlaces = document.querySelectorAll(".nav-bar a");
@@ -158,10 +156,11 @@
             const href = enlace.getAttribute("href");
             const nombre = href.replace(".html", "").toLowerCase();
 
-            if (
-                (nombre === "index" && (urlActual === "/" || urlActual.includes("index.html"))) ||
-                (nombre !== "index" && urlActual.includes(nombre))
-            ) {
+            const esIndex = nombre === "index";
+            const esPaginaIndex = urlActual === "/" || urlActual.endsWith("index.html");
+            const esPaginaActual = urlActual.endsWith(nombre + ".html");
+
+            if ((esIndex && esPaginaIndex) || (!esIndex && esPaginaActual)) {
                 enlace.classList.add("active");
             } else {
                 enlace.classList.remove("active");
@@ -170,8 +169,6 @@
     });
 </script>
 
-
-    </script>
 </body>
 
 </html>
