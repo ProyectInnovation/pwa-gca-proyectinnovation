@@ -2,31 +2,31 @@ import { resaltaSiEstasEn } from "../lib/js/resaltaSiEstasEn.js"
 
 export class NavBar extends HTMLElement {
 
- connectedCallback() {
-  this.classList.add("md-navigation-bar")
+  connectedCallback() {
+    this.classList.add("md-navigation-bar")
 
-  this.innerHTML = /* HTML */`
-   <a ${resaltaSiEstasEn(["/index.html", "", "/"])} href="index.html">
-    <span class="material-symbols-outlined">home</span>
-    Inicio
-   </a>
+    this.innerHTML = /* HTML */`
+      <a ${resaltaSiEstasEn(["/index.html", "", "/"])} href="index.html">
+        <span class="material-symbols-outlined">public</span>
+        GPS
+      </a>
 
-   <a ${resaltaSiEstasEn(["/navTabFixed.html"])} href="navTabFixed.html">
-    <span class="material-symbols-outlined">tabs</span>
-    Pestañas
-   </a>
+      <a ${resaltaSiEstasEn(["/camara.html"])} href="camara.html">
+        <span class="material-symbols-outlined">photo_camera</span>
+        Cámara
+      </a>
 
-   <a id="navbar" ${resaltaSiEstasEn(["/navbar.html"])} href="navbar.html">
-    <span class="material-symbols-outlined">bottom_navigation</span>
-    Barra
-   </a>
+      <a ${resaltaSiEstasEn(["/archivos.html"])} href="archivos.html">
+        <span class="material-symbols-outlined">folder</span>
+        Archivos
+      </a>
 
-   <a ${resaltaSiEstasEn(["/formulario.html"])} href="formulario.html">
-    <span class="material-symbols-outlined">newspaper</span>
-    Forma
-   </a>`
-
- }
+      <a ${resaltaSiEstasEn(["/ayuda.html"])} href="ayuda.html">
+        <span class="material-symbols-outlined">help</span>
+        Ayuda
+      </a>
+    `
+  }
 
 }
 

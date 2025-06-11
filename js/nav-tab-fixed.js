@@ -11,19 +11,20 @@ export class NavTabFixed extends HTMLElement {
     Inicio
    </a>
 
-   <a ${resaltaSiEstasEn(["/archivos.html", "", "/"])} href="archivos.html">
-    <span class="material-symbols-outlined">folder</span>
-    Archivos
+   <a ${resaltaSiEstasEn(["/navtab.html"])} href="navtab.html">
+    <span class="material-symbols-outlined">swipe_left</span>
+    Pestañas scrollable
    </a>
 
-   <a ${resaltaSiEstasEn(["/camara.html", "", "/"])} href="camara.html">
-    <span class="material-symbols-outlined">camera</span>
-    Cámara
+   <a id="navtabfixed" ${resaltaSiEstasEn(["/navTabFixed.html"])}
+     href="navTabFixed.html">
+    <span class="material-symbols-outlined">tabs</span>
+    Pestañas fijas
    </a>
 
-   <a ${resaltaSiEstasEn(["/ayuda.html"])} href="ayuda.html">
-    <span class="material-symbols-outlined">help</span>
-    Ayuda
+   <a ${resaltaSiEstasEn(["/navbar.html"])} href="navbar.html">
+    <span class="material-symbols-outlined">bottom_navigation</span>
+    Barra de navegación
    </a>`
  }
 
